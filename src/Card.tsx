@@ -5,6 +5,7 @@ import { isHidden } from "./utils/isHidden"
 import { useDrop } from "react-dnd"
 import { throttle } from "throttle-debounce-ts"
 import { moveTask, setDraggedItem } from "./state/actions"
+import { useItemDrag } from "./utils/useItemDrag"
 
 type CardProps = {
   text: string
