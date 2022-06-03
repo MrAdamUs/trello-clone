@@ -12,7 +12,19 @@ export const save = (payload: AppState) => {
     if (response.ok) {
       return response.json()
     } else {
-      throw new Error("Error while saving the state")
+      throw new Error("Error while saving the state.")
     }
   })
+}
+
+export const load = () => {
+  return fetch(`${process.env.REACT_APP_BACKEND_ENDPOINT}/load`).then(
+    (response) => {
+      if (response.ok) {
+        return response.json() as Promise<AppState>
+      } else {
+        throw new Error("Error while loading the state.")
+      }
+    }
+  )
 }
